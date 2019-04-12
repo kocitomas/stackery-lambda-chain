@@ -10,16 +10,14 @@ REMOTE_LAMBDA_NAME = os.environ["FUNCTION_NAME"]
 
 def handler(message, context):
     body = message["body"]
-    print(body)
-    return "yoyo"
 
-    # print("tokenizer forwarding inbound message to predictor: {}".format(message))
-    #
-    # invoke_response = lambda_client.invoke(FunctionName=REMOTE_LAMBDA_NAME,
-    #                                            InvocationType="RequestResponse",
-    #                                            Payload=json.dumps(message))
-    #
-    #
+    print("tokenizer forwarding inbound message to predictor: {}".format(body))
+
+    invoke_response = lambda_client.invoke(FunctionName=REMOTE_LAMBDA_NAME,
+                                               InvocationType="RequestResponse",
+                                               Payload=json.dumps(body))
+
+    print(invoke_response)
     # response = {
     #     'statusCode': 200,
     #     'headers': { 'Content-Type': 'json' },
@@ -27,4 +25,6 @@ def handler(message, context):
     #  }
     #
     # return response
+
+    return {"body": "you are the coolest"}
 
