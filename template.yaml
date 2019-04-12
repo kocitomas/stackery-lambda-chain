@@ -18,17 +18,23 @@ Resources:
               x-amazon-apigateway-integration:
                 httpMethod: POST
                 type: aws_proxy
-                uri: !Sub arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${getWelcomePage.Arn}/invocations
+                uri: !Sub arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${tokenizer.Arn}/invocations
+              responses: {}
+            post:
+              x-amazon-apigateway-integration:
+                httpMethod: POST
+                type: aws_proxy
+                uri: !Sub arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${tokenizer.Arn}/invocations
               responses: {}
       EndpointConfiguration: REGIONAL
-  getWelcomePage:
+  predictor:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub ${AWS::StackName}-getWelcomePage
+      FunctionName: !Sub ${AWS::StackName}-predictor
       Description: !Sub
-        - Stackery Stack ${StackeryStackTagName} Environment ${StackeryEnvironmentTagName} Function ${ResourceName}
-        - ResourceName: getWelcomePage
-      CodeUri: src/getWelcomePage
+        - Stack ${StackTagName} Environment ${EnvironmentTagName} Function ${ResourceName}
+        - ResourceName: predictor
+      CodeUri: src/predictor
       Handler: handler.handler
       Runtime: python3.6
       MemorySize: 3008
@@ -36,6 +42,25 @@ Resources:
       Tracing: Active
       Policies:
         - AWSXrayWriteOnlyAccess
+    Metadata:
+      StackeryName: predictor
+  tokenizer:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${AWS::StackName}-tokenizer
+      Description: !Sub
+        - Stackery Stack ${StackeryStackTagName} Environment ${StackeryEnvironmentTagName} Function ${ResourceName}
+        - ResourceName: tokenizer
+      CodeUri: src/tokenizer
+      Handler: handler.handler
+      Runtime: python3.6
+      MemorySize: 3008
+      Timeout: 30
+      Tracing: Active
+      Policies:
+        - AWSXrayWriteOnlyAccess
+        - LambdaInvokePolicy:
+            FunctionName: !Ref predictor
       Events:
         apiGET:
           Type: Api
@@ -43,8 +68,18 @@ Resources:
             Path: /
             Method: GET
             RestApiId: !Ref api
+        apiPOST:
+          Type: Api
+          Properties:
+            Path: /
+            Method: POST
+            RestApiId: !Ref api
+      Environment:
+        Variables:
+          FUNCTION_NAME: !Ref predictor
+          FUNCTION_ARN: !GetAtt predictor.Arn
     Metadata:
-      StackeryName: getWelcomePage
+      StackeryName: tokenizer
 Parameters:
   StackeryStackTagName:
     Type: String
@@ -55,3 +90,9 @@ Parameters:
   StackeryEnvironmentAPIGatewayStageName:
     Type: String
     Description: Environment name used for API Gateway Stage names (injected by Stackery at deployment time)
+  StackTagName:
+    Type: String
+    Description: Stack Name (injected by Stackery at deployment time)
+  EnvironmentTagName:
+    Type: String
+    Description: Environment Name (injected by Stackery at deployment time)
