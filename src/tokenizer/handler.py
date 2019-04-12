@@ -17,7 +17,12 @@ def handler(message, _context):
                                                InvocationType="RequestResponse",
                                                Payload=json.dumps(body))
 
+    print("tokenizer received responses from predictor: {}".format(invoke_response))
+
     streaming_object = invoke_response["Payload"]
+
+    print("streaming object: {}".format(streaming_object))
+
     res_json = json.loads(streaming_object.read().decode("utf-8"))
 
     response = {

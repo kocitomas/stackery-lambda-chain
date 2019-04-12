@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92f5d6d1-9337-4c30-a54a-74193b0f9b82" name="Default Changelist" comment="" />
+    <list default="true" id="92f5d6d1-9337-4c30-a54a-74193b0f9b82" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/predictor/handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/predictor/handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokenizer/handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tokenizer/handler.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +25,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/predictor/handler.py">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="75">
-                      <caret line="5" column="47" lean-forward="true" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
+                    <state relative-caret-position="45">
+                      <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
                     </state>
                   </provider>
                 </entry>
@@ -50,8 +53,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/tokenizer/handler.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="16" column="80" lean-forward="true" selection-start-line="16" selection-start-column="80" selection-end-line="16" selection-end-column="80" />
+                <state relative-caret-position="465">
+                  <caret line="31" column="6" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
                   <folding>
                     <element signature="e#0#40#0" expanded="true" />
                   </folding>
@@ -69,8 +72,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/tokenizer/handler.py" />
         <option value="$PROJECT_DIR$/src/predictor/handler.py" />
+        <option value="$PROJECT_DIR$/src/tokenizer/handler.py" />
       </list>
     </option>
   </component>
@@ -120,7 +123,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555103971963" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555104186930" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -148,12 +151,12 @@
       <option name="presentableId" value="Default" />
       <updated>1555100864079</updated>
       <workItem from="1555100865367" duration="675000" />
-      <workItem from="1555101558121" duration="2155000" />
+      <workItem from="1555101558121" duration="2437000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2830000" />
+    <option name="totallyTimeSpent" value="3112000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3419" y="-259" width="2273" height="1298" extended-state="0" />
@@ -205,20 +208,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tokenizer/handler.py">
+    <entry file="file://$PROJECT_DIR$/src/predictor/handler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="80" lean-forward="true" selection-start-line="16" selection-start-column="80" selection-end-line="16" selection-end-column="80" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/predictor/handler.py">
+    <entry file="file://$PROJECT_DIR$/src/tokenizer/handler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="47" lean-forward="true" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
+        <state relative-caret-position="465">
+          <caret line="31" column="6" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

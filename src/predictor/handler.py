@@ -1,6 +1,4 @@
-def handler(message, context):
-    print(message)
-
-    #print("Predictor is processing message: {}".format(body))
+def handler(message, _context):
+    print("Predictor is processing message: {}".format(message))
 
     return {"text": "No, you are the coolest!"}
