@@ -26,7 +26,7 @@ def handler(message, _context):
     response = {
         'statusCode': 200,
         'headers': { 'Content-Type': 'application/json'},
-        'body': json.dumps(body)
+        'body': body
      }
 
     return response
