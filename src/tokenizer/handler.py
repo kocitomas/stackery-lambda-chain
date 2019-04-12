@@ -21,7 +21,7 @@ def handler(message, _context):
 
     streaming_object = invoke_response["Payload"]
 
-    body = streaming_object.read()
+    body = streaming_object.read().decode('utf-8')
 
     response = {
         'statusCode': 200,
