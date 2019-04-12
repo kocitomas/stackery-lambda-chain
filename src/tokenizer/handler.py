@@ -21,17 +21,12 @@ def handler(message, _context):
 
     streaming_object = invoke_response["Payload"]
 
-    print("streaming object: {}".format(streaming_object))
-
     body = streaming_object.read()
-
-    res_json = json.loads(body)
-
 
     response = {
         'statusCode': 200,
         'headers': { 'Content-Type': 'application/json'},
-        'body': res_json
+        'body': json.dumps(body)
      }
 
     return response
