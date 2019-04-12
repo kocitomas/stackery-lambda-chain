@@ -14,7 +14,7 @@ def handler(message, context):
     print("tokenizer forwarding inbound message to predictor: {}".format(body))
 
     invoke_response = lambda_client.invoke(FunctionName=REMOTE_LAMBDA_NAME,
-                                               InvocationType="RequestResponse",
+                                               InvocationType="Event",
                                                Payload=json.dumps(body))
 
     print(invoke_response)
