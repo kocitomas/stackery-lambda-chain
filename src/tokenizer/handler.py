@@ -25,15 +25,12 @@ def handler(message, _context):
 
     body = streaming_object.read()
 
-    print(body)
-
     res_json = json.loads(body)
 
-    print(res_json)
 
     response = {
         'statusCode': 200,
-        'headers': { 'Content-Type': 'json'},
+        'headers': { 'Content-Type': 'application/json'},
         'body': res_json
      }
 
