@@ -1,4 +1,4 @@
 def handler(message, context):
-    print(message)
+    print("Predictor is processing message: {}".format(message))
 
-    return {}
+    return message
