@@ -23,7 +23,13 @@ def handler(message, _context):
 
     print("streaming object: {}".format(streaming_object))
 
-    res_json = json.loads(streaming_object.read().decode("utf-8"))
+    body = streaming_object.read()
+
+    print(body)
+
+    res_json = json.loads(body)
+
+    print(res_json)
 
     response = {
         'statusCode': 200,
