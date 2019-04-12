@@ -1,4 +1,5 @@
 from boto3 import client as boto3_client
+import botocore.response as br
 import json
 import os
 
@@ -14,17 +15,18 @@ def handler(message, context):
     print("tokenizer forwarding inbound message to predictor: {}".format(body))
 
     invoke_response = lambda_client.invoke(FunctionName=REMOTE_LAMBDA_NAME,
-                                               InvocationType="Event",
+                                               InvocationType="RequestResponse",
                                                Payload=json.dumps(body))
 
-    print(invoke_response)
-    # response = {
-    #     'statusCode': 200,
-    #     'headers': { 'Content-Type': 'json' },
-    #     'body': invoke_response
-    #  }
-    #
-    # return response
+    streaming_object = invoke_response["Payload"]
+    res_json = json.loads(streaming_object.read().decode("utf-8"))
 
-    return {"body": "you are the coolest"}
+    response = {
+        'statusCode': 200,
+        'headers': { 'Content-Type': 'json'},
+        'body': res_json
+     }
+
+    return response
+
 
