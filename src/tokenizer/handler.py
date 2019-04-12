@@ -9,9 +9,8 @@ lambda_client = boto3_client("lambda")
 REMOTE_LAMBDA_NAME = os.environ["FUNCTION_NAME"]
 
 def handler(message, context):
-    print(message)
-    print(context)
-
+    body = message["body"]
+    print(body)
     return "yoyo"
 
     # print("tokenizer forwarding inbound message to predictor: {}".format(message))
