@@ -53,7 +53,7 @@
             <entry file="file://$PROJECT_DIR$/src/tokenizer/handler.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="240">
-                  <caret line="16" column="78" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="78" />
+                  <caret line="16" column="80" lean-forward="true" selection-start-line="16" selection-start-column="80" selection-end-line="16" selection-end-column="80" />
                   <folding>
                     <element signature="e#0#40#0" expanded="true" />
                   </folding>
@@ -122,7 +122,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555103546573" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555103644372" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -150,12 +150,12 @@
       <option name="presentableId" value="Default" />
       <updated>1555100864079</updated>
       <workItem from="1555100865367" duration="675000" />
-      <workItem from="1555101558121" duration="1670000" />
+      <workItem from="1555101558121" duration="1919000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2345000" />
+    <option name="totallyTimeSpent" value="2594000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3419" y="-259" width="2273" height="1298" extended-state="0" />
@@ -217,7 +217,7 @@
     <entry file="file://$PROJECT_DIR$/src/tokenizer/handler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="78" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="78" />
+          <caret line="16" column="80" lean-forward="true" selection-start-line="16" selection-start-column="80" selection-end-line="16" selection-end-column="80" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

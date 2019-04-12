@@ -1,5 +1,4 @@
 from boto3 import client as boto3_client
-import botocore.response as br
 import json
 import os
 
@@ -9,7 +8,7 @@ lambda_client = boto3_client("lambda")
 # load env vars
 REMOTE_LAMBDA_NAME = os.environ["FUNCTION_NAME"]
 
-def handler(message, context):
+def handler(message, _context):
     body = message["body"]
 
     print("tokenizer forwarding inbound message to predictor: {}".format(body))
